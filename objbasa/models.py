@@ -7,7 +7,7 @@ class Listing(models.Model):
     address = models.TextField()
     show_address = models.BooleanField()
     price = models.IntegerField()
-    space = models.CommaSeparatedIntegerField(max_length=6)
+    space = models.DecimalField(max_digits=6, decimal_places = 2)
     created_date = models.DateTimeField(
         default=timezone.now)
     published_date = models.DateTimeField(
