@@ -1,0 +1,12 @@
+{% extends 'basa/base.html' %}
+              {% block content %}
+                  {% for Listing in lists %}
+                      <div class="ListingShort">
+                          <div class="date">
+                              {{ Listing.published_date }}
+                          </div>
+                          <h2><a href="{% url 'listing_detail' pk=Listing.pk %}">{{ Listing.title }}</a></h2>
+                          <p>{{ Listing.address }}, {{ Listing.space_type }} </p>
+                      </div>
+                  {% endfor %}
+              {% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'basa/base.html' %}
+  {% block content %}
+    <div class="Listing">
+      {% if Listing.published_date %}
+          <div class="date">
+              {{ Listing.published_date }}
+          </div>
+      {% endif %}
+      <h1>{{ Listing.title }}</h1>
+      <p>Address: {{ Listing.address}} </p>
+      <p>Price: {{ Listing.price}} </p>
+      <p>Type: {{ Listing.space_type}} </p>
+      <p>Author: {{ Listing.author}} </p>
+    </div>
+  {% endblock content %}
