@@ -6,6 +6,7 @@
               {{ Listing.published_date }}
           </div>
       {% endif %}
+      <a class="btn btn-default" href="{% url 'list_edit' pk=Listing.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
       <h1>{{ Listing.title }}</h1>
       <p>Address: {{ Listing.address}} </p>
       <p>Price: {{ Listing.price}} </p>
