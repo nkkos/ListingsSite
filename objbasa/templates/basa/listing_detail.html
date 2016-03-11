@@ -5,8 +5,14 @@
           <div class="date">
               {{ Listing.published_date }}
           </div>
+      {% else %}
+          <a class="btn btn-default" href="{% url 'list_publish' pk=Listing.pk %}">Publish</a>
+
       {% endif %}
-      <a class="btn btn-default" href="{% url 'list_edit' pk=Listing.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+      {% if user.is_authenticated %}
+        <a class="btn btn-default" href="{% url 'list_edit' pk=Listing.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'list_remove' pk=Listing.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+      {% endif %}
       <h1>{{ Listing.title }}</h1>
       <p>Address: {{ Listing.address}} </p>
       <p>Price: {{ Listing.price}} </p>

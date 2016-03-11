@@ -24,11 +24,11 @@ SECRET_KEY = '$!^z4ym2j64%ytbm-w55n%dp^p(j)=l8zn%bze@c10)2mlbf@h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
 # Application definition
+
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -105,3 +105,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = '/'
