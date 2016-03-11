@@ -1,6 +1,8 @@
 from django.conf.urls import include, url, patterns
 from . import views
 from django.contrib import admin
+from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponseRedirect
 admin.autodiscover()
 
 
