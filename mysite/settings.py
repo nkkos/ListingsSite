@@ -107,3 +107,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = '/'
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'svin2013@gmail.com'
+EMAIL_HOST_PASSWORD = 'tbontb88'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

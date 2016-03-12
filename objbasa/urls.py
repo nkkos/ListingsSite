@@ -1,6 +1,7 @@
 from django.conf.urls import include, url, patterns
 from . import views
 from django.contrib import admin
+from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 admin.autodiscover()
@@ -16,5 +17,7 @@ urlpatterns = [
     url(r'^listing/(?P<pk>[0-9]+)/remove/$', views.list_remove, name='list_remove'),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
+    url('^register/', views.register, name ='register'),
+    url(r'^accounts/sign_up/', ('objbasa.views.register')),
 
 ]

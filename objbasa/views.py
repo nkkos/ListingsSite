@@ -1,11 +1,16 @@
 from django.shortcuts import render, get_object_or_404, redirect, render_to_response
 from django.utils import timezone
 from .models import Listing
-from .forms import NListing
+from .forms import NListing, NewUser
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
-from django.http import HttpResponseRedirect
-
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib import auth
+from django.core.context_processors import csrf
+from django.template import RequestContext
+from django.core.mail import send_mail
+import hashlib, datetime, random
 
 
 # Create your views here.
@@ -61,3 +66,14 @@ def list_remove(request, pk):
     Listo = get_object_or_404(Listing, pk=pk)
     Listo.delete()
     return redirect("objbasa.views.post_list")
+
+
+def register(request):
+    if request.method == "POST":
+        form = NewUser(request.POST)
+        if form.is_valid():
+            User = form.save()
+            return redirect('objbasa.views.post_list')
+    else:
+        form = NewUser
+    return render(request,'registration/register.html', {'form':form})

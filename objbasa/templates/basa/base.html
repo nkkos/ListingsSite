@@ -18,6 +18,8 @@
             <p class="top-menu">Hello {{ user.username }}<small>(<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</small></p>
           {% else %}
             <a href="{% url 'django.contrib.auth.views.login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+            <a href="{% url 'objbasa.views.register' %}" class="top-menu"><span class="glyphicon glyphicon-user"></span></a>
+
           {% endif %}
           <h1><a href="/">Moscow Small Warehouses</a></h1>
       </div>

@@ -1,5 +1,8 @@
 from django.db import models
 from django.utils import timezone
+import hashlib, datetime, random
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
 class Listing(models.Model):
     author = models.ForeignKey('auth.User')
